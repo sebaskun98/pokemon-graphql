@@ -1,0 +1,15 @@
+type Query {
+    pokemon(limit: Int): Pokemon!
+    pokemonById(id: ID!): User
+    pokemonByName(name: String!): [Post!]!
+}
+
+type Pokemon {
+    count: Int!
+    results: [Result]
+}
+
+type Result {
+    name: String!
+    url: String!
+}
