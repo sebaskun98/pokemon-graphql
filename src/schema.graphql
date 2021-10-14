@@ -1,7 +1,7 @@
 type Query {
     pokemon(limit: Int): Pokemon!
-    pokemonById(id: ID!): User
-    pokemonByName(name: String!): [Post!]!
+    pokemonById(id: ID!): PokemonInfo!
+    pokemonByName(name: String!): PokemonInfo!
 }
 
 type Pokemon {
@@ -12,4 +12,32 @@ type Pokemon {
 type Result {
     name: String!
     url: String!
+}
+
+type PokemonInfo {
+    id: Int!
+    name: String!
+    abilities: [AbilityInfo]
+    game_indices: [GameIndices]
+    height: Int
+    weight: Int
+
+}
+
+type AbilityInfo {
+    ability: Ability
+    slot: Int
+}
+
+type Ability {
+    name: String!
+}
+
+type GameIndices {
+    game_index: Int!
+    version: Version
+}
+
+type Version {
+    name: String! 
 }
