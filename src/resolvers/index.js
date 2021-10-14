@@ -10,7 +10,7 @@ const resolvers = {
                 .then((response) => response.json())
                 .then((resp) => resp);
         },
-        /*pokemonById: (parent, args) => {
+        pokemonById: (parent, args) => {
             const { id } = args;
             return fetch(`${baseURL}/pokemon/${id}`).then((res) => res.json());
         },
@@ -19,7 +19,7 @@ const resolvers = {
             return fetch(`${baseURL}/pokemon/${name}`).then((res) =>
                 res.json()
             );
-        },*/
+        },
     },
 };
 
